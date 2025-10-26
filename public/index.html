@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoChat Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="header-content">
+                <i class="fas fa-lock"></i>
+                <h1>CryptoChat Pro</h1>
+                <span class="status-dot"></span>
+                <span class="status-text">Secure • Encrypted</span>
+            </div>
+            <div class="user-count">
+                <i class="fas fa-users"></i>
+                <span id="userCount">1</span> online
+            </div>
+        </div>
+
+        <div class="chat-sidebar">
+            <div class="sidebar-section">
+                <h3><i class="fas fa-user-friends"></i> Online Users</h3>
+                <div id="userList" class="user-list"></div>
+            </div>
+            <div class="sidebar-section">
+                <h3><i class="fas fa-info-circle"></i> Room Info</h3>
+                <p>Welcome to the main room! All messages are end-to-end encrypted.</p>
+            </div>
+        </div>
+
+        <div class="chat-main">
+            <div id="messages" class="messages-container"></div>
+            
+            <div class="typing-indicator" id="typingIndicator"></div>
+            
+            <div class="input-container">
+                <div class="input-group">
+                    <button id="fileButton" class="file-button" title="Upload file">
+                        <i class="fas fa-paperclip"></i>
+                    </button>
+                    <input type="file" id="fileInput" style="display: none;">
+                    
+                    <input type="text" id="messageInput" placeholder="Type your encrypted message..." maxlength="500">
+                    
+                    <button id="sendButton" class="send-button">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="input-info">
+                    <span>Messages are encrypted • File size limit: 10MB</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
